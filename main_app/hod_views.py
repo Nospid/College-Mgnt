@@ -644,9 +644,9 @@ def send_student_notification(request):
             },
             'to': student.admin.fcm_token
         }
-        headers = {'Authorization':
-                   'key=AAAA3Bm8j_M:APA91bElZlOLetwV696SoEtgzpJr2qbxBfxVBfDWFiopBWzfCfzQp2nRyC7_A2mlukZEHV4g1AmyC6P_HonvSkY2YyliKt5tT3fe_1lrKod2Daigzhb2xnYQMxUWjCAIQcUexAMPZePB',
-                   'Content-Type': 'application/json'}
+        # headers = {'Authorization':
+        #            'key=AAAA3Bm8j_M:APA91bElZlOLetwV696SoEtgzpJr2qbxBfxVBfDWFiopBWzfCfzQp2nRyC7_A2mlukZEHV4g1AmyC6P_HonvSkY2YyliKt5tT3fe_1lrKod2Daigzhb2xnYQMxUWjCAIQcUexAMPZePB',
+        #            'Content-Type': 'application/json'}
         data = requests.post(url, data=json.dumps(body), headers=headers)
         notification = NotificationStudent(student=student, message=message)
         notification.save()
